@@ -7,10 +7,22 @@ app.use(express.json())
 
 app.use(express.static('public'))
 
+// include and initialize the rollbar library with your access token
+const Rollbar = require('rollbar')
+const rollbar = new Rollbar({
+  accessToken: '6d92301506e74adfba423b70b9c9d773',
+  captureUncaught: true,
+  captureUnhandledRejections: true,
+})
+
+// record a generic message and send it to Rollbar
+rollbar.log('Hello world!')
+
 app.get('/api/robots', (req, res) => {
     try {
         res.status(200).send(botsArr)
     } catch (error) {
+        rollbar.error('getting all bots functionality is broken')
         console.log('ERROR GETTING BOTS', error)
         res.sendStatus(400)
     }
@@ -23,6 +35,7 @@ app.get('/api/robots/five', (req, res) => {
         let compDuo = shuffled.slice(6, 8)
         res.status(200).send({choices, compDuo})
     } catch (error) {
+        rollbar.critical('Cannot get selection bots: game cannot be played')
         console.log('ERROR GETTING FIVE BOTS', error)
         res.sendStatus(400)
     }
@@ -30,6 +43,7 @@ app.get('/api/robots/five', (req, res) => {
 
 app.post('/api/duel', (req, res) => {
     try {
+        rollbar.info('player is dueling...')
         // getting the duos from the front end
         let {compDuo, playerDuo} = req.body
 
@@ -63,6 +77,7 @@ app.get('/api/player', (req, res) => {
     try {
         res.status(200).send(playerRecord)
     } catch (error) {
+        rollbar.error('error getting player stats')
         console.log('ERROR GETTING PLAYER STATS', error)
         res.sendStatus(400)
     }
