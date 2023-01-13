@@ -1,0 +1,16 @@
+Test case 1
+Created Jan 13, 2023
+
+Description:
+
+User should be able to see a full list of possible robot selections for the duel
+
+Steps:
+
+1. (assuming a running probject on localhost port 4000) go to http://localhost:4000
+
+2. click on the "See All Bots" button
+
+Post conditions:
+
+- User should see a list of mulitple robots appear, available for dueling, on the page

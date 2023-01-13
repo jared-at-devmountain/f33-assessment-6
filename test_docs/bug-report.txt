@@ -1,0 +1,27 @@
+Bug report for test case 1
+Written on Jan 13, 2023
+
+"Get All Bots" button does not show a list of robots
+
+Steps to Reproduce:
+
+1. (assuming a running probject on localhost port 4000) go to http://localhost:4000
+
+2. click on the "See All Bots" button
+
+Expected Result:
+
+- I should now be able to see a list of robots
+
+Actual Result:
+
+- On clicking the button, the page does not change, and no robots are shown
+
+Notes:
+
+Errors are shown in the browser console and in the backend console
+
+Environment:
+
+OS: macOS Monterey 12.6
+Browser: Version 108.0.5359.124 (Official Build) (x86_64)

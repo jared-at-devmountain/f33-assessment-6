@@ -1,0 +1,34 @@
+Test plan for Duel Duo App
+Created Jan 13, 2023
+
+Overview:
+
+Plan to test functionality of the Duel Duo website
+
+Test Criteria:
+
+- Player can play a game effectively
+
+ - Player must be able to draw 5 robots and then duel the computer
+
+ - Correct results must be displayed when one or more games is played
+
+ - User will be informed of wins and losses
+
+ - Player can see a list of all of the robots
+
+Entry criteria:
+
+- Has access to internet
+
+- Has proper tools for dev such as npm, node, Github access
+
+- Has a laptop with a standard browser (preferrably Chrome)
+
+Exit criteria:
+
+- All tests pass
+
+Details:
+
+none
